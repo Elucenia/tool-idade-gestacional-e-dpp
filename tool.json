@@ -1,0 +1,263 @@
+{
+  "tool": {
+    "id": "idade-gestacional-e-dpp",
+    "title": "Idade gestacional e DPP pela DUM",
+    "short": "Regra de Naegele e idade gestacional em semanas",
+    "spec": [
+      "ginecologia-e-obstetricia",
+      "medicina-de-familia-e-comunidade"
+    ],
+    "tier": 1,
+    "desc": "Calcule a idade gestacional e a data provável do parto (DPP) pela data da última menstruação, com a regra de Naegele e a classificação do termo da ACOG.",
+    "lead": "Estima a idade gestacional em semanas e dias e a data provável do parto a partir da data da última menstruação (DUM), numa data de referência escolhida.",
+    "fields": [
+      [
+        "dum_d",
+        "DUM: dia",
+        "num",
+        {
+          "min": 1,
+          "max": 31,
+          "step": 1,
+          "ph": "12"
+        }
+      ],
+      [
+        "dum_m",
+        "DUM: mês",
+        "num",
+        {
+          "min": 1,
+          "max": 12,
+          "step": 1,
+          "ph": "3"
+        }
+      ],
+      [
+        "dum_a",
+        "DUM: ano",
+        "num",
+        {
+          "min": 2015,
+          "max": 2040,
+          "step": 1,
+          "ph": "2026"
+        }
+      ],
+      [
+        "ref_d",
+        "Data de referência: dia <small>(vazio = hoje)</small>",
+        "num",
+        {
+          "min": 1,
+          "max": 31,
+          "step": 1,
+          "ph": "25",
+          "opt": true
+        }
+      ],
+      [
+        "ref_m",
+        "Data de referência: mês",
+        "num",
+        {
+          "min": 1,
+          "max": 12,
+          "step": 1,
+          "ph": "9",
+          "opt": true
+        }
+      ],
+      [
+        "ref_a",
+        "Data de referência: ano",
+        "num",
+        {
+          "min": 2015,
+          "max": 2040,
+          "step": 1,
+          "ph": "2026",
+          "opt": true
+        }
+      ]
+    ],
+    "formula": "<p><strong>Idade gestacional</strong> = dias entre a DUM e a data de referência, expressos em semanas e dias (ex.: 267 dias = 38s 1d).</p><p><strong>DPP</strong> = DUM + 280 dias (40 semanas), a convenção da ACOG. A <strong>regra de Naegele</strong> clássica (DUM + 7 dias − 3 meses + 1 ano) dá o mesmo dia ou até 3 dias de diferença, conforme os meses envolvidos: os dois valores são mostrados.</p>",
+    "table": [
+      [
+        "Idade gestacional",
+        "Classificação (ACOG)"
+      ],
+      [
+        "&lt; 37s 0d",
+        "Pré-termo"
+      ],
+      [
+        "37s 0d a 38s 6d",
+        "Termo precoce"
+      ],
+      [
+        "39s 0d a 40s 6d",
+        "Termo completo"
+      ],
+      [
+        "41s 0d a 41s 6d",
+        "Termo tardio"
+      ],
+      [
+        "≥ 42s 0d",
+        "Pós-termo"
+      ]
+    ],
+    "tips": [
+      "A DUM só é confiável com ciclos regulares, data lembrada com segurança e sem anticoncepcional hormonal nos 3 meses anteriores; se não for o caso, date pela ultrassonografia.",
+      "A ultrassonografia do 1º trimestre (CCN) é o método mais preciso: quando a diferença para a DUM passa do limite da ACOG, a gestação é redatada pela ultrassonografia (use a ferramenta de idade gestacional pelo CCN).",
+      "Depois de definida (DUM confirmada ou ultrassonografia precoce), a DPP não deve ser alterada por exames posteriores: diferenças no 3º trimestre sugerem alteração do crescimento, não erro de data.",
+      "Em gestação por fertilização in vitro, calcule pela data da transferência e pela idade do embrião: DPP = transferência + 261 dias (embrião de 5 dias) ou + 263 dias (embrião de 3 dias)."
+    ],
+    "sources": [
+      [
+        "American College of Obstetricians and Gynecologists. Committee Opinion No 700: Methods for Estimating the Due Date. Obstet Gynecol, 2017.",
+        "https://doi.org/10.1097/AOG.0000000000002046"
+      ],
+      [
+        "American College of Obstetricians and Gynecologists. Committee Opinion No 579: Definition of term pregnancy. Obstet Gynecol, 2013.",
+        "https://doi.org/10.1097/01.AOG.0000437385.88715.4a"
+      ]
+    ],
+    "cases": [
+      [
+        "DUM 01/01/2026, referência 25/09/2026: 267 dias = 38s 1d, DPP 08/10/2026 (termo precoce)",
+        {
+          "dum_d": 1,
+          "dum_m": 1,
+          "dum_a": 2026,
+          "ref_d": 25,
+          "ref_m": 9,
+          "ref_a": 2026
+        },
+        {
+          "main": "38s 1d",
+          "raw": {
+            "ig_dias": 267,
+            "dpp": "08/10/2026",
+            "naegele": "08/10/2026"
+          },
+          "level": "low"
+        }
+      ],
+      [
+        "DUM 10/03/2026, referência 25/09/2026: 199 dias = 28s 3d; DPP 15/12/2026 (Naegele clássica: 17/12)",
+        {
+          "dum_d": 10,
+          "dum_m": 3,
+          "dum_a": 2026,
+          "ref_d": 25,
+          "ref_m": 9,
+          "ref_a": 2026
+        },
+        {
+          "main": "28s 3d",
+          "raw": {
+            "ig_dias": 199,
+            "dpp": "15/12/2026",
+            "naegele": "17/12/2026"
+          },
+          "level": "info",
+          "verdict": "3º trimestre"
+        }
+      ],
+      [
+        "DUM 01/01/2026, referência 18/10/2026: 290 dias = 41s 3d (termo tardio)",
+        {
+          "dum_d": 1,
+          "dum_m": 1,
+          "dum_a": 2026,
+          "ref_d": 18,
+          "ref_m": 10,
+          "ref_a": 2026
+        },
+        {
+          "main": "41s 3d",
+          "level": "mid",
+          "verdict": "termo tardio"
+        }
+      ],
+      [
+        "DUM 01/01/2026, referência 22/10/2026: 294 dias = 42s 0d (pós-termo, limite)",
+        {
+          "dum_d": 1,
+          "dum_m": 1,
+          "dum_a": 2026,
+          "ref_d": 22,
+          "ref_m": 10,
+          "ref_a": 2026
+        },
+        {
+          "main": "42s 0d",
+          "level": "high",
+          "verdict": "pós-termo"
+        }
+      ],
+      [
+        "Referência anterior à DUM: erro",
+        {
+          "dum_d": 10,
+          "dum_m": 3,
+          "dum_a": 2026,
+          "ref_d": 1,
+          "ref_m": 3,
+          "ref_a": 2026
+        },
+        {
+          "error": true
+        }
+      ],
+      [
+        "DUM em 31/02 (data inexistente): erro",
+        {
+          "dum_d": 31,
+          "dum_m": 2,
+          "dum_a": 2026,
+          "ref_d": 1,
+          "ref_m": 9,
+          "ref_a": 2026
+        },
+        {
+          "error": true
+        }
+      ]
+    ],
+    "batch": "mulher-crianca",
+    "kind": "Calculadora",
+    "config": null,
+    "areaId": "mulher-crianca",
+    "clinicalReview": "pending",
+    "sourceReview": "pending",
+    "sourceFile": "app/content/ferramentas/mulher-crianca.php",
+    "arithmeticTest": {
+      "status": "passed",
+      "testedAt": "2026-09-25",
+      "total": 6,
+      "passed": 6,
+      "failures": []
+    },
+    "independentArithmeticTest": {
+      "status": "not-tested",
+      "testedAt": null,
+      "total": 0,
+      "passed": 0,
+      "cases": []
+    }
+  },
+  "review": {
+    "status": "needs-review",
+    "reason": "Revisão documental e clínica independente pendente.",
+    "clinicalValidation": "not-performed"
+  },
+  "sourceFile": {
+    "path": "app/content/ferramentas/mulher-crianca.php",
+    "sha256": "c37d3fefb430d6ec19144161e40e9a08247f3a10406e2873c8d6a4be8649917c",
+    "bytes": 81915
+  },
+  "clinicalValidation": "not-performed"
+}

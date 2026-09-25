@@ -1,0 +1,157 @@
+[
+  {
+    "label": "DUM 01/01/2026, referência 25/09/2026: 267 dias = 38s 1d, DPP 08/10/2026 (termo precoce)",
+    "input": {
+      "dum_d": 1,
+      "dum_m": 1,
+      "dum_a": 2026,
+      "ref_d": 25,
+      "ref_m": 9,
+      "ref_a": 2026
+    },
+    "expected": {
+      "main": "38s 1d",
+      "raw": {
+        "ig_dias": 267,
+        "dpp": "08/10/2026",
+        "naegele": "08/10/2026"
+      },
+      "level": "low"
+    },
+    "originalInput": {
+      "dum_d": 1,
+      "dum_m": 1,
+      "dum_a": 2026,
+      "ref_d": 25,
+      "ref_m": 9,
+      "ref_a": 2026
+    },
+    "expandedZeroOptions": []
+  },
+  {
+    "label": "DUM 10/03/2026, referência 25/09/2026: 199 dias = 28s 3d; DPP 15/12/2026 (Naegele clássica: 17/12)",
+    "input": {
+      "dum_d": 10,
+      "dum_m": 3,
+      "dum_a": 2026,
+      "ref_d": 25,
+      "ref_m": 9,
+      "ref_a": 2026
+    },
+    "expected": {
+      "main": "28s 3d",
+      "raw": {
+        "ig_dias": 199,
+        "dpp": "15/12/2026",
+        "naegele": "17/12/2026"
+      },
+      "level": "info",
+      "verdict": "3º trimestre"
+    },
+    "originalInput": {
+      "dum_d": 10,
+      "dum_m": 3,
+      "dum_a": 2026,
+      "ref_d": 25,
+      "ref_m": 9,
+      "ref_a": 2026
+    },
+    "expandedZeroOptions": []
+  },
+  {
+    "label": "DUM 01/01/2026, referência 18/10/2026: 290 dias = 41s 3d (termo tardio)",
+    "input": {
+      "dum_d": 1,
+      "dum_m": 1,
+      "dum_a": 2026,
+      "ref_d": 18,
+      "ref_m": 10,
+      "ref_a": 2026
+    },
+    "expected": {
+      "main": "41s 3d",
+      "level": "mid",
+      "verdict": "termo tardio"
+    },
+    "originalInput": {
+      "dum_d": 1,
+      "dum_m": 1,
+      "dum_a": 2026,
+      "ref_d": 18,
+      "ref_m": 10,
+      "ref_a": 2026
+    },
+    "expandedZeroOptions": []
+  },
+  {
+    "label": "DUM 01/01/2026, referência 22/10/2026: 294 dias = 42s 0d (pós-termo, limite)",
+    "input": {
+      "dum_d": 1,
+      "dum_m": 1,
+      "dum_a": 2026,
+      "ref_d": 22,
+      "ref_m": 10,
+      "ref_a": 2026
+    },
+    "expected": {
+      "main": "42s 0d",
+      "level": "high",
+      "verdict": "pós-termo"
+    },
+    "originalInput": {
+      "dum_d": 1,
+      "dum_m": 1,
+      "dum_a": 2026,
+      "ref_d": 22,
+      "ref_m": 10,
+      "ref_a": 2026
+    },
+    "expandedZeroOptions": []
+  },
+  {
+    "label": "Referência anterior à DUM: erro",
+    "input": {
+      "dum_d": 10,
+      "dum_m": 3,
+      "dum_a": 2026,
+      "ref_d": 1,
+      "ref_m": 3,
+      "ref_a": 2026
+    },
+    "expected": {
+      "error": true
+    },
+    "originalInput": {
+      "dum_d": 10,
+      "dum_m": 3,
+      "dum_a": 2026,
+      "ref_d": 1,
+      "ref_m": 3,
+      "ref_a": 2026
+    },
+    "expandedZeroOptions": []
+  },
+  {
+    "label": "DUM em 31/02 (data inexistente): erro",
+    "input": {
+      "dum_d": 31,
+      "dum_m": 2,
+      "dum_a": 2026,
+      "ref_d": 1,
+      "ref_m": 9,
+      "ref_a": 2026
+    },
+    "expected": {
+      "error": true
+    },
+    "originalInput": {
+      "dum_d": 31,
+      "dum_m": 2,
+      "dum_a": 2026,
+      "ref_d": 1,
+      "ref_m": 9,
+      "ref_a": 2026
+    },
+    "expandedZeroOptions": []
+  }
+]
