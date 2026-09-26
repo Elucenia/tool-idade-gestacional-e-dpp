@@ -1,7 +1,7 @@
 {
   "name": "@elucenia/tool-idade-gestacional-e-dpp",
   "version": "0.1.0",
-  "description": "Idade gestacional e DPP pela DUM · Elucenia: reprodução técnica de fórmula ou escore clínico, sem dependências, para navegador e Node.js.",
+  "description": "Idade gestacional e DPP pela DUM · ELUCENIA: reprodução técnica de fórmula ou escore clínico, sem dependências, para navegador e Node.js.",
   "keywords": [
     "elucenia",
     "medical-calculator",

@@ -1,11 +1,11 @@
-/* tool-idade-gestacional-e-dpp · Elucenia · https://github.com/Elucenia/tool-idade-gestacional-e-dpp
-   Copyright (c) 2026 Elucenia · Felipe Guedes (fgxdev.com). Licensed under the Apache License 2.0: keep this notice and the NOTICE file, and mark your changes.
+/* tool-idade-gestacional-e-dpp · ELUCENIA · https://github.com/Elucenia/tool-idade-gestacional-e-dpp
+   Copyright (c) 2026 ELUCENIA · Felipe Guedes (fgxdev.com). Licensed under the Apache License 2.0: keep this notice and the NOTICE file, and mark your changes.
    Standalone integration. Package metadata and rights: README.md. */
 (function(root){'use strict';
 function freeze(value){if(value&&typeof value==='object'){for(const item of Object.values(value))freeze(item);Object.freeze(value);}return value;}
 const TOOL=freeze({"id":"idade-gestacional-e-dpp","title":"Idade gestacional e DPP pela DUM","fields":[["dum_d","DUM: dia","num",{"min":1,"max":31,"step":1,"ph":"12"}],["dum_m","DUM: mês","num",{"min":1,"max":12,"step":1,"ph":"3"}],["dum_a","DUM: ano","num",{"min":2015,"max":2040,"step":1,"ph":"2026"}],["ref_d","Data de referência: dia <small>(vazio = hoje)</small>","num",{"min":1,"max":31,"step":1,"ph":"25","opt":true}],["ref_m","Data de referência: mês","num",{"min":1,"max":12,"step":1,"ph":"9","opt":true}],["ref_a","Data de referência: ano","num",{"min":2015,"max":2040,"step":1,"ph":"2026","opt":true}]],"config":null,"reviewStatus":"needs-review","clinicalValidation":"not-performed"});
 const window={};
-/* Elucenia arithmetic registry. No DOM access, storage, telemetry or network requests. */
+/* ELUCENIA arithmetic registry. No DOM access, storage, telemetry or network requests. */
 (function(root){
   'use strict';
   const CALC={fn:Object.create(null)};
