@@ -227,13 +227,9 @@
         }
       ]
     ],
-    "batch": "mulher-crianca",
     "kind": "Calculadora",
     "config": null,
-    "areaId": "mulher-crianca",
     "clinicalReview": "pending",
-    "sourceReview": "pending",
-    "sourceFile": "app/content/ferramentas/mulher-crianca.php",
     "arithmeticTest": {
       "status": "passed",
       "testedAt": "2026-09-25",
@@ -253,11 +249,6 @@
     "status": "needs-review",
     "reason": "Revisão documental e clínica independente pendente.",
     "clinicalValidation": "not-performed"
-  },
-  "sourceFile": {
-    "path": "app/content/ferramentas/mulher-crianca.php",
-    "sha256": "c37d3fefb430d6ec19144161e40e9a08247f3a10406e2873c8d6a4be8649917c",
-    "bytes": 81915
   },
   "clinicalValidation": "not-performed"
 }
